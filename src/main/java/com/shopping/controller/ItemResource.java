@@ -23,7 +23,7 @@ public class ItemResource {
 	
 	@Autowired
 	private ItemJpaService itemJpaService;
-	
+
 	@PostMapping("/items")
 	public ResponseEntity<Void> addItem(@RequestBody Item item) {
 		itemJpaService.addItem(item);
@@ -44,8 +44,12 @@ public class ItemResource {
 	}
 	
 	@GetMapping("/items/{id}")
-	public Item getItem(@PathVariable Integer id) {
-		return itemJpaService.getItem(id);
+	public ResponseEntity<Item> getItem(@PathVariable Integer id) {
+		Item item = itemJpaService.getItem(id);
+		if(item != null) {
+			return new ResponseEntity<Item>(item, HttpStatus.OK);
+		}
+		return ResponseEntity.notFound().build();
 	}
 	
 }

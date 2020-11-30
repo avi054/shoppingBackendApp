@@ -1,5 +1,9 @@
 package com.shopping.dto;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.data.util.ReflectionUtils;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Item {
@@ -74,5 +78,10 @@ public class Item {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
 	}
 }

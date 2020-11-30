@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.shopping</groupId>
 	<artifactId>shopping-backend</artifactId>
@@ -48,7 +48,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+	    </dependency>
+      	<dependency>
+    		<groupId>org.junit.vintage</groupId>
+    		<artifactId>junit-vintage-engine</artifactId>
+    		<scope>test</scope>
 		</dependency>
+      
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		
+		
 	</dependencies>
 
 	<build>

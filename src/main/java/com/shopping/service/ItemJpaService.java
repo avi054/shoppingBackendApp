@@ -48,9 +48,9 @@ public class ItemJpaService {
 
 	public Item getItem(Integer id) {
 		Optional<com.shopping.dbo.Item> i = itemRepository.findById(id);
-		Item item = new Item();
-		
+		Item item = null;
 		if(i.isPresent()) {
+			item = new Item();
 			item.setId(i.get().getId());
 			item.setName(i.get().getName());
 			item.setDescription(i.get().getDescription());

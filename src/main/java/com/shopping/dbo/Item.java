@@ -8,7 +8,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="itemsTable", schema="shoppingApp")
-//@Table(name="itemsTable")
 public class Item {
 
 	@Id
@@ -53,4 +52,11 @@ public class Item {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Item [id=%s, name=%s, description=%s, price=%s]", id, name, description, price);
+	}
+	
+	
 }
